@@ -1,0 +1,9 @@
+.main-div{
+   display: block;
+}
+
+@media only screen and (max-width: 600px) {
+.Grow-1{
+   display: block;
+}
+}

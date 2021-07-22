@@ -1,33 +1,48 @@
-import React from 'react';
-import {Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography} from '@material-ui/core';
+import React, { useState, useEffect, createRef } from 'react';
+import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+
+
 import useStyles from './styles';
-import classNames from 'classnames'
 
+const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, activeArticle, i }) => {
+  const classes = useStyles();
+  const [elRefs, setElRefs] = useState([]);
+  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
 
-const NewsCard = ({article:{description,publishedAt, source, title, url, urlToImage}, i,activeArcticel}) =>{
-    const classes = useStyles();
+  useEffect(() => {
+    window.scroll(0, 0);
 
-    return (
-        <div>
-        <Card className={classNames(classes.card, activeArcticel === i ? classes.activeCard:null)}>
-            <CardActionArea href={url} target="_blank">
-                <CardMedia className={classes.media} image={urlToImage || 'https://s.france24.com/media/display/d1676b6c-0770-11e9-8595-005056a964fe/w:1400/p:16x9/news_1920x1080.webp'} />
-                <div className={classes.details}>
-                    <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
-                    <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>
-                </div>
-                <Typography className={classes.title} gutterBottomv variant="h5">{title}</Typography>
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">{description}</Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary"> Learn More</Button>
-                <Typography variant="h5" color="textSecondary">{i + 1}</Typography>
-            </CardActions>
-        </Card>
+    setElRefs((refs) => Array(20).fill().map((_, j) => refs[j] || createRef()));
+  }, []);
+
+  useEffect(() => {
+    if (i === activeArticle && elRefs[activeArticle]) {
+      scrollToRef(elRefs[activeArticle]);
+    }
+  }, [i, activeArticle, elRefs]);
+
+  return (
+      <>
+    <Card style={{marginLeft:'1vh'}} ref={elRefs[i]} className={ activeArticle === i ? classes.activeCard : classes.card}>
+      <CardActionArea href={url} target="_blank">
+        <CardMedia className={classes.media} image={urlToImage || 'https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png'} title={title} />
+        <div className={classes.details}>
+          <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
+          <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>
         </div>
-    )
-}
+        <Typography className={classes.title} gutterBottom variant="h5" component="h2">{title}</Typography>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">{description}</Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions className={classes.cardActions}>
+      <Button size="small" color="primary" href={url}>Learn More</Button>
+        <Typography variant="h5" color="textSecondary" component="h2">{i + 1}</Typography>
+      </CardActions>
+    </Card>
+    
+    </>
+  );
+};
 
 export default NewsCard;

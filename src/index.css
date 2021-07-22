@@ -4,9 +4,8 @@
 
 body{
   margin: 0;
-  background-color: whitesmoke;
-  background: url('https://www.adweek.com/wp-content/uploads/2019/05/ai-fake-news-CONTENT-2019.jpg');
-  background-size: cover;
+  background-image:linear-gradient(#2E3192, #1BFFFF);
+  
   
 }
 
@@ -42,9 +41,9 @@ html{
 @media only screen and (max-width: 600px) {
   .logoContainer{
     display: none;
+    height: 30vh;
   }
   body{
-    background: url('https://thumbs.dreamstime.com/b/male-news-anchor-comic-cartoon-pop-art-retro-vector-illustration-drawing-125086636.jpg');
-    background-size: cover;
+    background-image:linear-gradient(#2E3192, #1BFFFF)
   }
 }
