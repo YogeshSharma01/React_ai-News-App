@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/React_ai-News-App/static/css/main.129eeae2.chunk.css",
-    "main.js": "/React_ai-News-App/static/js/main.9885a12f.chunk.js",
-    "main.js.map": "/React_ai-News-App/static/js/main.9885a12f.chunk.js.map",
+    "main.css": "/React_ai-News-App/static/css/main.fca7a451.chunk.css",
+    "main.js": "/React_ai-News-App/static/js/main.7ade8ce6.chunk.js",
+    "main.js.map": "/React_ai-News-App/static/js/main.7ade8ce6.chunk.js.map",
     "runtime-main.js": "/React_ai-News-App/static/js/runtime-main.43b04e6c.js",
     "runtime-main.js.map": "/React_ai-News-App/static/js/runtime-main.43b04e6c.js.map",
-    "static/js/2.49b862de.chunk.js": "/React_ai-News-App/static/js/2.49b862de.chunk.js",
-    "static/js/2.49b862de.chunk.js.map": "/React_ai-News-App/static/js/2.49b862de.chunk.js.map",
+    "static/js/2.dd037e83.chunk.js": "/React_ai-News-App/static/js/2.dd037e83.chunk.js",
+    "static/js/2.dd037e83.chunk.js.map": "/React_ai-News-App/static/js/2.dd037e83.chunk.js.map",
     "index.html": "/React_ai-News-App/index.html",
-    "static/css/main.129eeae2.chunk.css.map": "/React_ai-News-App/static/css/main.129eeae2.chunk.css.map",
-    "static/js/2.49b862de.chunk.js.LICENSE.txt": "/React_ai-News-App/static/js/2.49b862de.chunk.js.LICENSE.txt"
+    "static/css/main.fca7a451.chunk.css.map": "/React_ai-News-App/static/css/main.fca7a451.chunk.css.map",
+    "static/js/2.dd037e83.chunk.js.LICENSE.txt": "/React_ai-News-App/static/js/2.dd037e83.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.43b04e6c.js",
-    "static/js/2.49b862de.chunk.js",
-    "static/css/main.129eeae2.chunk.css",
-    "static/js/main.9885a12f.chunk.js"
+    "static/js/2.dd037e83.chunk.js",
+    "static/css/main.fca7a451.chunk.css",
+    "static/js/main.7ade8ce6.chunk.js"
   ]
 }
